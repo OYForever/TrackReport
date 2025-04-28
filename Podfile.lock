@@ -1,0 +1,16 @@
+PODS:
+  - TrackReport (1.0.0)
+
+DEPENDENCIES:
+  - TrackReport (from `./`)
+
+EXTERNAL SOURCES:
+  TrackReport:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  TrackReport: 74d805855bd6457af9f517c3b327b8feaf1a7f5a
+
+PODFILE CHECKSUM: 24db89da569b88acad784ee8370a5be5944636d6
+
+COCOAPODS: 1.16.2

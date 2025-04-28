@@ -1,0 +1,22 @@
+{
+  "name": "TrackReport",
+  "version": "1.0.0",
+  "summary": "TrackReport components",
+  "homepage": "https://github.com/OYForever",
+  "license": "MIT",
+  "authors": "MIT",
+  "source": {
+    "git": "https://github.com/OYForever/TrackReport.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "TrackReport/src/**/*.{swift}",
+  "resources": [
+    "TrackReport/src/Resource/PrivacyInfo.xcprivacy"
+  ],
+  "preserve_paths": "TrackReport/src/**/*",
+  "swift_version": "5.0"
+}
