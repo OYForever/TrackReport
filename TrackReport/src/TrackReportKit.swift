@@ -18,6 +18,8 @@ public enum TrackReportSubscriptionPage: Int {
     case guideSubscriptionRecoveryPage
     /// 首页弹窗
     case homePopPage
+    /// 自动续费
+    case automaticRenewal
 }
 
 @objc

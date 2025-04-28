@@ -242,6 +242,7 @@ extension TrackReportSubscriptionPage {
         case .guideSubscriptionPage: "引导订阅页"
         case .guideSubscriptionRecoveryPage: "引导订阅挽回页"
         case .homePopPage: "首页弹窗"
+        case .automaticRenewal: "自动续费"
         }
     }
 }
