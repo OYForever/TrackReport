@@ -16,12 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [TrackReportKit tr_configWithHost:@"https://mac.bsfss.com" appId:@"50"];
+//    [TrackReportKit tr_configWithHost:@"https://mac.bsfss.com" appId:@"50"];
     
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [TrackReportKit registerUser];
-//    });
-    [TrackReportKit tr_subscriptionWithTransactionId:@"12123" page:TrackReportSubscriptionPageSubscriptionPage];
+//    [TrackReportKit registerUser];
+    
+//    [TrackReportKit tr_subscriptionWithTransactionId:@"12123" page:TrackReportSubscriptionTypeNewSubscription];
+    
+//    [TrackReportKit tr_customEventWithEventId:@"123123" behaviorContent:@"哈哈哈"];
 }
 
 

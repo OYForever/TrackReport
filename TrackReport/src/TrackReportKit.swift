@@ -18,6 +18,8 @@ public enum TrackReportSubscriptionPage: Int {
     case guideSubscriptionRecoveryPage
     /// 首页弹窗
     case homePopPage
+    /// 新增订阅
+    case newSubscription
     /// 自动续费
     case automaticRenewal
 }
@@ -48,5 +50,14 @@ public class TrackReportKit: NSObject {
     @objc(tr_subscriptionWithTransactionId:page:)
     public class func subscription(with transactionId: String, page: TrackReportSubscriptionPage) {
         ReportManager.shared.subscription(with: transactionId, page: page)
+    }
+    
+    /// 自定义事件
+    /// - Parameters:
+    ///   - eventId: 事件id
+    ///   - behaviorContent: 额外信息，可为空
+    @objc(tr_customEventWithEventId:behaviorContent:)
+    public class func customEvent(with eventId: String, behaviorContent: String? = nil) {
+        ReportManager.shared.customEvent(with: eventId, behaviorContent: behaviorContent)
     }
 }

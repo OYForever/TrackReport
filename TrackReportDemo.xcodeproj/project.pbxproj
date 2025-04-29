@@ -15,6 +15,7 @@
 		53B1F6F02DBDFC95001A67AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E02DBDFC95001A67AE /* Assets.xcassets */; };
 		53B1F6F22DBDFC95001A67AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E32DBDFC95001A67AE /* LaunchScreen.storyboard */; };
 		53B1F6F32DBDFC95001A67AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E62DBDFC95001A67AE /* Main.storyboard */; };
+		53B1F7292DC07997001A67AE /* TrackReport.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F7282DC07997001A67AE /* TrackReport.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		53B1F6E82DBDFC95001A67AE /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		53B1F6E92DBDFC95001A67AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		53B1F6EA2DBDFC95001A67AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		53B1F7282DC07997001A67AE /* TrackReport.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrackReport.podspec; sourceTree = SOURCE_ROOT; };
 		662B68D7428525A58FC1CA58 /* Pods_TrackReportDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackReportDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA32882106729B789874683F /* Pods-TrackReportDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackReportDemo.debug.xcconfig"; path = "Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 		53B1F6EB2DBDFC95001A67AE /* TrackReportDemo */ = {
 			isa = PBXGroup;
 			children = (
+				53B1F7282DC07997001A67AE /* TrackReport.podspec */,
 				53B1F6DE2DBDFC95001A67AE /* AppDelegate.h */,
 				53B1F6DF2DBDFC95001A67AE /* AppDelegate.m */,
 				53B1F6E02DBDFC95001A67AE /* Assets.xcassets */,
@@ -175,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B1F7292DC07997001A67AE /* TrackReport.podspec in Resources */,
 				53B1F6F02DBDFC95001A67AE /* Assets.xcassets in Resources */,
 				53B1F6F22DBDFC95001A67AE /* LaunchScreen.storyboard in Resources */,
 				53B1F6F32DBDFC95001A67AE /* Main.storyboard in Resources */,

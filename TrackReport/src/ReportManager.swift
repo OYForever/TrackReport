@@ -170,6 +170,61 @@ extension ReportManager {
         // 启动任务
         task.resume()
     }
+    
+    func customEvent(with eventId: String, behaviorContent: String? = nil) {
+        let urlString = baseUrl + RequestPath.eventReport
+        guard let url = URL(string: urlString) else {
+            kLog("无效的 URL: \(urlString)")
+            return
+        }
+        // 2. 创建 URLRequest
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        // 3. 准备要发送的 JSON 数据
+        var requestBody: [String: Any] = [
+            "projectId": baseAppId,
+            "platform": "ios",
+            "version": Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "1.0.0",
+            "behaviorTypeId": eventId
+        ]
+        if let behaviorContent {
+            requestBody["behaviorContent"] = behaviorContent
+        }
+        if let uuid {
+            requestBody["uuid"] = uuid
+        }
+        if let token {
+            requestBody["token"] = token
+        }
+        // 4. 将字典转换为 JSON Data
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: requestBody, options: [])
+            request.httpBody = jsonData
+            kLog("上报自定义事件请求: \(urlString), 数据: \(requestBody)")
+        } catch {
+            kLog("JSON 序列化失败: \(error)")
+            return
+        }
+        // 5. 发送网络请求
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            // 6. 处理响应
+            if let error = error {
+                kLog("自定义事件请求失败: \(error)")
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                kLog("无效的响应")
+                return
+            }
+            kLog("自定义事件请求响应状态码: \(httpResponse.statusCode)")
+            if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                kLog("自定义事件请求响应内容: \(responseString)")
+            }
+        }
+        // 启动任务
+        task.resume()
+    }
 }
 
 private
@@ -243,6 +298,7 @@ extension TrackReportSubscriptionPage {
         case .guideSubscriptionRecoveryPage: "引导订阅挽回页"
         case .homePopPage: "首页弹窗"
         case .automaticRenewal: "自动续费"
+        case .newSubscription: "新增订阅"
         }
     }
 }
