@@ -46,6 +46,15 @@
 		53B1F6E92DBDFC95001A67AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		53B1F6EA2DBDFC95001A67AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		53B1F7282DC07997001A67AE /* TrackReport.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrackReport.podspec; sourceTree = SOURCE_ROOT; };
+		53FDC67E2DDDA573004207D0 /* RequestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
+		53FDC6802DDDA573004207D0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		53FDC6822DDDA573004207D0 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		53FDC6832DDDA573004207D0 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		53FDC6852DDDA573004207D0 /* ReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportManager.swift; sourceTree = "<group>"; };
+		53FDC6862DDDA573004207D0 /* TrackReportKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackReportKit.swift; sourceTree = "<group>"; };
+		53FDC6892DDDA5AF004207D0 /* TrackReport.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TrackReport.bundle; sourceTree = "<group>"; };
+		53FDC68A2DDDAAB4004207D0 /* LanguageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTool.swift; sourceTree = "<group>"; };
+		53FDC68D2DDDB290004207D0 /* AppVersionCheckTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionCheckTool.swift; sourceTree = "<group>"; };
 		662B68D7428525A58FC1CA58 /* Pods_TrackReportDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackReportDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA32882106729B789874683F /* Pods-TrackReportDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackReportDemo.debug.xcconfig"; path = "Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +83,7 @@
 		53B1F6B82DBDFC8E001A67AE = {
 			isa = PBXGroup;
 			children = (
+				53FDC6882DDDA573004207D0 /* TrackReport */,
 				53B1F6EB2DBDFC95001A67AE /* TrackReportDemo */,
 				53B1F6C22DBDFC8E001A67AE /* Products */,
 				42C47ECD57A801CEEC02E5C1 /* Pods */,
@@ -106,6 +116,54 @@
 				53B1F6EA2DBDFC95001A67AE /* ViewController.m */,
 			);
 			path = TrackReportDemo;
+			sourceTree = "<group>";
+		};
+		53FDC67F2DDDA573004207D0 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				53FDC67E2DDDA573004207D0 /* RequestPath.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		53FDC6812DDDA573004207D0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				53FDC6802DDDA573004207D0 /* PrivacyInfo.xcprivacy */,
+				53FDC6892DDDA5AF004207D0 /* TrackReport.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		53FDC6842DDDA573004207D0 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				53FDC6822DDDA573004207D0 /* Logger.swift */,
+				53FDC6832DDDA573004207D0 /* UserDefaults.swift */,
+				53FDC68A2DDDAAB4004207D0 /* LanguageTool.swift */,
+				53FDC68D2DDDB290004207D0 /* AppVersionCheckTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		53FDC6872DDDA573004207D0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				53FDC67F2DDDA573004207D0 /* Const */,
+				53FDC6812DDDA573004207D0 /* Resource */,
+				53FDC6842DDDA573004207D0 /* Tool */,
+				53FDC6852DDDA573004207D0 /* ReportManager.swift */,
+				53FDC6862DDDA573004207D0 /* TrackReportKit.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		53FDC6882DDDA573004207D0 /* TrackReport */ = {
+			isa = PBXGroup;
+			children = (
+				53FDC6872DDDA573004207D0 /* src */,
+			);
+			path = TrackReport;
 			sourceTree = "<group>";
 		};
 		C7223C65E983FFBB2EE06AD8 /* Frameworks */ = {
@@ -347,6 +405,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -408,6 +467,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -1,5 +1,5 @@
 PODS:
-  - TrackReport (1.0.0)
+  - TrackReport (1.0.2)
 
 DEPENDENCIES:
   - TrackReport (from `./`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  TrackReport: 74d805855bd6457af9f517c3b327b8feaf1a7f5a
+  TrackReport: 4526162a2625ff1a210a5f87428ab741ebad8750
 
 PODFILE CHECKSUM: 24db89da569b88acad784ee8370a5be5944636d6
 

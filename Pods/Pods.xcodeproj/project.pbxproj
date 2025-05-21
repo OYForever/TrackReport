@@ -3,26 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 71;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081C13771F8991A1EBBDFE567EB2ADDC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF7126123915A4FF49C20CB21BD4C8 /* PrivacyInfo.xcprivacy */; };
 		0DAC796735C6910E2052B135640EB7C2 /* Pods-TrackReportDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90CBE9F554BD3D879B940CDAD2040C46 /* Pods-TrackReportDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17E86E12C486CD2D0448567C449B2CC5 /* TrackReport-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A124D7699474ADAEDE93404398DC641 /* TrackReport-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		25B8FB3B7D573D9E45289A833CB6569B /* TrackReportKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D187AB45B9585CA8BC59F578F274FA /* TrackReportKit.swift */; };
-		277E13E5D7838FE27147F5145A056E30 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EF0292448122BD3252681891D9AE17FD /* PrivacyInfo.xcprivacy */; };
-		27C588DF502962392B6CECB022EA2280 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF02D344EAED4AC79A63303517138F /* UserDefaults.swift */; };
-		4B8DAB43F50DC3B2C4419E118221DE57 /* RequestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE26F0AE37D6118DA287EA7C8D5A1A /* RequestPath.swift */; };
+		206FDAFE3167D795988D8ABCFA7846AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		30AFB214738F4762E5DFD41457BDB7CB /* AppVersionCheckTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240412E4F4F533CB9EFB0ACA65A1FB22 /* AppVersionCheckTool.swift */; };
+		3C2D9D773D9B77881BC0B5A68FCC443B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99BE6BA3B97C576D2CE434D8D1D532 /* Logger.swift */; };
+		438071C81349A60AF71200D7682FCC30 /* RequestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23AD6893C601D187D3291B8E451416 /* RequestPath.swift */; };
+		4679AF980E6EE84A0098F6B3C52B0C55 /* ReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5D30D6E0A03653594CB14197898D2 /* ReportManager.swift */; };
+		52DF59ED72272686765DC60F50CCB061 /* LanguageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41067E195F4FE23BA3B298EC5C5DD4BE /* LanguageTool.swift */; };
+		61A9A87876256E02AEE6E9F5C9A08803 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E44D53792A8F8CABD7EB3C96CEE8F /* UserDefaults.swift */; };
+		6B85222B0B0893B1A8BFBD82694FE4A6 /* TrackReportKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6857257F38DF930167B7ED97CF183D /* TrackReportKit.swift */; };
 		6D91C6D040695DBFD2312E0098B07A3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		7EAD9B34016B33960A67D1F152BCDE5F /* Pods-TrackReportDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7C241EA4CC89EBCEDF275D9B690676 /* Pods-TrackReportDemo-dummy.m */; };
-		90AB0B22727B594FE7BF63FC96D194C1 /* TrackReport-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD85088A1081947759ECB58C01CD27F5 /* TrackReport-dummy.m */; };
-		A632B963BE841F25DAD16BC64E7BA0CD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D412881DEDD848B6B44E54CA0457DAEE /* Logger.swift */; };
-		D41D6379A15CF83B3C7647421D4FBC90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
-		F099F6193B4818E8F2BAA795DE4D348F /* ReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF55DF7A33327B237AE045BB946140 /* ReportManager.swift */; };
+		87550A19B459E9093AA7E8E7D983D00D /* TrackReport.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 40F8089C9744F132AB46974A295278B1 /* TrackReport.bundle */; };
+		BDA3B8FBE17786535ADAC1A2B0BC0B25 /* TrackReport-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B75F9687567A24D39FA3FB9F955D6669 /* TrackReport-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA8F81669B6489C59E788114A1B16740 /* TrackReport-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7880BEFD0C6DE7985F28D678E021DC3 /* TrackReport-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		43F79FC87DD6FDFB6A76A08B46F18969 /* PBXContainerItemProxy */ = {
+		523E6AF63A14BE8D7D85CAD2DCE43EF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -33,32 +36,35 @@
 
 /* Begin PBXFileReference section */
 		01254FC18CFBB894433AB065450BC285 /* Pods-TrackReportDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TrackReportDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		05292394C77EFE0F164332174F6BC245 /* TrackReport.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TrackReport.modulemap; sourceTree = "<group>"; };
-		22D187AB45B9585CA8BC59F578F274FA /* TrackReportKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackReportKit.swift; path = TrackReport/src/TrackReportKit.swift; sourceTree = "<group>"; };
-		27EF02D344EAED4AC79A63303517138F /* UserDefaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		2A124D7699474ADAEDE93404398DC641 /* TrackReport-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrackReport-umbrella.h"; sourceTree = "<group>"; };
+		113E44D53792A8F8CABD7EB3C96CEE8F /* UserDefaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		21BB35C7D5BE946B14B87B942BDD9A6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		240412E4F4F533CB9EFB0ACA65A1FB22 /* AppVersionCheckTool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppVersionCheckTool.swift; sourceTree = "<group>"; };
+		306FC051121337ABB50C58C00F68ADB0 /* TrackReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrackReport.debug.xcconfig; sourceTree = "<group>"; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3A06CF1F9C5474F68F4F52E5AAE5AD71 /* TrackReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrackReport.release.xcconfig; sourceTree = "<group>"; };
-		3EDE26F0AE37D6118DA287EA7C8D5A1A /* RequestPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
-		3FAE2536E4B65CD954DA507A2685C01C /* TrackReport-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TrackReport-Info.plist"; sourceTree = "<group>"; };
-		6737C7127D3B497B275464F03268680E /* Pods_TrackReportDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackReportDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrackReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B3700FC1B03CA309A64C03AF398B4FD /* TrackReport-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrackReport-prefix.pch"; sourceTree = "<group>"; };
+		40F8089C9744F132AB46974A295278B1 /* TrackReport.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TrackReport.bundle; path = TrackReport/src/Resource/TrackReport.bundle; sourceTree = "<group>"; };
+		41067E195F4FE23BA3B298EC5C5DD4BE /* LanguageTool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LanguageTool.swift; sourceTree = "<group>"; };
+		529A988AD728F3A094B6487A6AFCB89B /* TrackReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrackReport.release.xcconfig; sourceTree = "<group>"; };
+		59A0CA2C4D2DBDF66313BC85F9C1A469 /* TrackReport-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TrackReport-Info.plist"; sourceTree = "<group>"; };
+		5DEF7126123915A4FF49C20CB21BD4C8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = TrackReport/src/Resource/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6737C7127D3B497B275464F03268680E /* Pods-TrackReportDemo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TrackReportDemo"; path = Pods_TrackReportDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D6857257F38DF930167B7ED97CF183D /* TrackReportKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackReportKit.swift; path = TrackReport/src/TrackReportKit.swift; sourceTree = "<group>"; };
+		71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TrackReport; path = TrackReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A99BE6BA3B97C576D2CE434D8D1D532 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		8B8452106F7C48E659F01AF1A1081C8D /* Pods-TrackReportDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackReportDemo-Info.plist"; sourceTree = "<group>"; };
+		8F23AD6893C601D187D3291B8E451416 /* RequestPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
 		90CBE9F554BD3D879B940CDAD2040C46 /* Pods-TrackReportDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TrackReportDemo-umbrella.h"; sourceTree = "<group>"; };
-		9BF84CC2D01DA8DAFED860AB0F075DAD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AA90CD4BB3212CBC6D53857714DAA2E0 /* TrackReport.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TrackReport.modulemap; sourceTree = "<group>"; };
 		B4C959E875588CB3DDE395B1A546141B /* Pods-TrackReportDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackReportDemo.release.xcconfig"; sourceTree = "<group>"; };
-		BCCF55DF7A33327B237AE045BB946140 /* ReportManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReportManager.swift; path = TrackReport/src/ReportManager.swift; sourceTree = "<group>"; };
-		C9C1EEDFEBF528D1216859DF3A551CAC /* TrackReport.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TrackReport.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		B75F9687567A24D39FA3FB9F955D6669 /* TrackReport-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrackReport-umbrella.h"; sourceTree = "<group>"; };
 		CA7C241EA4CC89EBCEDF275D9B690676 /* Pods-TrackReportDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TrackReportDemo-dummy.m"; sourceTree = "<group>"; };
 		CD24002B9AB914DAABBACF7CF97978CA /* Pods-TrackReportDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackReportDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		CD85088A1081947759ECB58C01CD27F5 /* TrackReport-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TrackReport-dummy.m"; sourceTree = "<group>"; };
-		D412881DEDD848B6B44E54CA0457DAEE /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D5730EB7E2FCF6DB5388A9B9EE5CA2A2 /* Pods-TrackReportDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TrackReportDemo.modulemap"; sourceTree = "<group>"; };
+		D9C5D30D6E0A03653594CB14197898D2 /* ReportManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReportManager.swift; path = TrackReport/src/ReportManager.swift; sourceTree = "<group>"; };
 		DC8892BA861F13D1D1E4BDEA345222BC /* Pods-TrackReportDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackReportDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		EF0292448122BD3252681891D9AE17FD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = TrackReport/src/Resource/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		EF9A082604AB84ECB1A94BA585DA7129 /* TrackReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrackReport.debug.xcconfig; sourceTree = "<group>"; };
+		DF85504B690DAE7E3389A275C80142C8 /* TrackReport-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrackReport-prefix.pch"; sourceTree = "<group>"; };
+		E7880BEFD0C6DE7985F28D678E021DC3 /* TrackReport-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TrackReport-dummy.m"; sourceTree = "<group>"; };
+		EEEB999378FFB9905AF5487E877A7F93 /* TrackReport.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TrackReport.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FAB04CF0B4A9A649AB03C57B21C2FAA2 /* Pods-TrackReportDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TrackReportDemo-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,51 +77,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		458E8D38092E7803D9745DBE9D7309D5 /* Frameworks */ = {
+		CBE8CD12E6AD0EBAB5DF54DCA4C90A11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D41D6379A15CF83B3C7647421D4FBC90 /* Foundation.framework in Frameworks */,
+				206FDAFE3167D795988D8ABCFA7846AD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0720A60455CAAA767BFFD4D902193913 /* TrackReport */ = {
+		0F261D8AE1CB56ADB1F276838788BAB7 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				EF0292448122BD3252681891D9AE17FD /* PrivacyInfo.xcprivacy */,
-				BCCF55DF7A33327B237AE045BB946140 /* ReportManager.swift */,
-				22D187AB45B9585CA8BC59F578F274FA /* TrackReportKit.swift */,
-				FC2522D82CE0BC1F8804AB196A270A18 /* Const */,
-				FCF86383828A3D31A7AEFB37F3CB451A /* Pod */,
-				3CE85646A3B8F9FCFB05637B2A80CFAB /* Support Files */,
-				B17B96E06CF7299D3D08A65F40362F24 /* Tool */,
+				21BB35C7D5BE946B14B87B942BDD9A6F /* LICENSE */,
+				EEEB999378FFB9905AF5487E877A7F93 /* TrackReport.podspec */,
 			);
-			name = TrackReport;
-			path = ..;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		3CE85646A3B8F9FCFB05637B2A80CFAB /* Support Files */ = {
+		1AE6BD715B33DF537335B30CDBCF241B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				05292394C77EFE0F164332174F6BC245 /* TrackReport.modulemap */,
-				CD85088A1081947759ECB58C01CD27F5 /* TrackReport-dummy.m */,
-				3FAE2536E4B65CD954DA507A2685C01C /* TrackReport-Info.plist */,
-				8B3700FC1B03CA309A64C03AF398B4FD /* TrackReport-prefix.pch */,
-				2A124D7699474ADAEDE93404398DC641 /* TrackReport-umbrella.h */,
-				EF9A082604AB84ECB1A94BA585DA7129 /* TrackReport.debug.xcconfig */,
-				3A06CF1F9C5474F68F4F52E5AAE5AD71 /* TrackReport.release.xcconfig */,
+				240412E4F4F533CB9EFB0ACA65A1FB22 /* AppVersionCheckTool.swift */,
+				41067E195F4FE23BA3B298EC5C5DD4BE /* LanguageTool.swift */,
+				8A99BE6BA3B97C576D2CE434D8D1D532 /* Logger.swift */,
+				113E44D53792A8F8CABD7EB3C96CEE8F /* UserDefaults.swift */,
 			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/TrackReport";
+			name = Tool;
+			path = TrackReport/src/Tool;
 			sourceTree = "<group>";
 		};
-		5A992BA6F991E98CCC12AC82FE8D22AC /* Development Pods */ = {
+		5B3DEA2E509AB4F1A3D4B46A09F7B2A4 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0720A60455CAAA767BFFD4D902193913 /* TrackReport */,
+				CEA43673C3B5A98D2E0056D3223EEF11 /* TrackReport */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -123,27 +120,48 @@
 		AC0AFA90F4796568072E9E7DA9411C2D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6737C7127D3B497B275464F03268680E /* Pods_TrackReportDemo.framework */,
-				71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport.framework */,
+				6737C7127D3B497B275464F03268680E /* Pods-TrackReportDemo */,
+				71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B17B96E06CF7299D3D08A65F40362F24 /* Tool */ = {
+		B78ED6A3A43775707E34486757C0A91E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D412881DEDD848B6B44E54CA0457DAEE /* Logger.swift */,
-				27EF02D344EAED4AC79A63303517138F /* UserDefaults.swift */,
+				AA90CD4BB3212CBC6D53857714DAA2E0 /* TrackReport.modulemap */,
+				E7880BEFD0C6DE7985F28D678E021DC3 /* TrackReport-dummy.m */,
+				59A0CA2C4D2DBDF66313BC85F9C1A469 /* TrackReport-Info.plist */,
+				DF85504B690DAE7E3389A275C80142C8 /* TrackReport-prefix.pch */,
+				B75F9687567A24D39FA3FB9F955D6669 /* TrackReport-umbrella.h */,
+				306FC051121337ABB50C58C00F68ADB0 /* TrackReport.debug.xcconfig */,
+				529A988AD728F3A094B6487A6AFCB89B /* TrackReport.release.xcconfig */,
 			);
-			name = Tool;
-			path = TrackReport/src/Tool;
+			name = "Support Files";
+			path = "Pods/Target Support Files/TrackReport";
+			sourceTree = "<group>";
+		};
+		CEA43673C3B5A98D2E0056D3223EEF11 /* TrackReport */ = {
+			isa = PBXGroup;
+			children = (
+				5DEF7126123915A4FF49C20CB21BD4C8 /* PrivacyInfo.xcprivacy */,
+				D9C5D30D6E0A03653594CB14197898D2 /* ReportManager.swift */,
+				40F8089C9744F132AB46974A295278B1 /* TrackReport.bundle */,
+				6D6857257F38DF930167B7ED97CF183D /* TrackReportKit.swift */,
+				EF2C0C90929B9EA931796939E284FB78 /* Const */,
+				0F261D8AE1CB56ADB1F276838788BAB7 /* Pod */,
+				B78ED6A3A43775707E34486757C0A91E /* Support Files */,
+				1AE6BD715B33DF537335B30CDBCF241B /* Tool */,
+			);
+			name = TrackReport;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				5A992BA6F991E98CCC12AC82FE8D22AC /* Development Pods */,
+				5B3DEA2E509AB4F1A3D4B46A09F7B2A4 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				AC0AFA90F4796568072E9E7DA9411C2D /* Products */,
 				EC887A372A427C8F4F6ADF86CB68ED12 /* Targets Support Files */,
@@ -174,6 +192,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		EF2C0C90929B9EA931796939E284FB78 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				8F23AD6893C601D187D3291B8E451416 /* RequestPath.swift */,
+			);
+			name = Const;
+			path = TrackReport/src/Const;
+			sourceTree = "<group>";
+		};
 		F8E5B35C4F1EA2E61F94425558858388 /* Pods-TrackReportDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,32 +218,14 @@
 			path = "Target Support Files/Pods-TrackReportDemo";
 			sourceTree = "<group>";
 		};
-		FC2522D82CE0BC1F8804AB196A270A18 /* Const */ = {
-			isa = PBXGroup;
-			children = (
-				3EDE26F0AE37D6118DA287EA7C8D5A1A /* RequestPath.swift */,
-			);
-			name = Const;
-			path = TrackReport/src/Const;
-			sourceTree = "<group>";
-		};
-		FCF86383828A3D31A7AEFB37F3CB451A /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				9BF84CC2D01DA8DAFED860AB0F075DAD /* LICENSE */,
-				C9C1EEDFEBF528D1216859DF3A551CAC /* TrackReport.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		ACA145361F137392DAF9BA28563C775F /* Headers */ = {
+		2B1315F72E4C7C04613947A240B6B430 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17E86E12C486CD2D0448567C449B2CC5 /* TrackReport-umbrella.h in Headers */,
+				BDA3B8FBE17786535ADAC1A2B0BC0B25 /* TrackReport-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,12 +242,12 @@
 /* Begin PBXNativeTarget section */
 		1866F5E2AB34515C67D7EDBD33792C40 /* TrackReport */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BE518D31DD60AF6F72E25A7A1E59D9E /* Build configuration list for PBXNativeTarget "TrackReport" */;
+			buildConfigurationList = DEEF44A5082D73186C40534E22B34A7F /* Build configuration list for PBXNativeTarget "TrackReport" */;
 			buildPhases = (
-				ACA145361F137392DAF9BA28563C775F /* Headers */,
-				00C1724981EF9C8E58BFC7F4C4110C35 /* Sources */,
-				458E8D38092E7803D9745DBE9D7309D5 /* Frameworks */,
-				A19382DD03BA6C560E7A176783CBFC8C /* Resources */,
+				2B1315F72E4C7C04613947A240B6B430 /* Headers */,
+				2FEC412C3E3A75B6832B23AAC90CFA43 /* Sources */,
+				CBE8CD12E6AD0EBAB5DF54DCA4C90A11 /* Frameworks */,
+				35B1B8723BBB3D04ACCCCCAE5D7A46A6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -246,7 +255,7 @@
 			);
 			name = TrackReport;
 			productName = TrackReport;
-			productReference = 71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport.framework */;
+			productReference = 71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport */;
 			productType = "com.apple.product-type.framework";
 		};
 		79D1A8BF5734D1074D96F13CCE159070 /* Pods-TrackReportDemo */ = {
@@ -261,11 +270,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				0ABFDDF6FF094B01A1D93496610837BA /* PBXTargetDependency */,
+				16ADF478ABC4F9A6C6D1ECDA226D28D9 /* PBXTargetDependency */,
 			);
 			name = "Pods-TrackReportDemo";
 			productName = Pods_TrackReportDemo;
-			productReference = 6737C7127D3B497B275464F03268680E /* Pods_TrackReportDemo.framework */;
+			productReference = 6737C7127D3B497B275464F03268680E /* Pods-TrackReportDemo */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -275,7 +284,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 16.0";
@@ -286,6 +295,8 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = AC0AFA90F4796568072E9E7DA9411C2D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,27 +315,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A19382DD03BA6C560E7A176783CBFC8C /* Resources */ = {
+		35B1B8723BBB3D04ACCCCCAE5D7A46A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277E13E5D7838FE27147F5145A056E30 /* PrivacyInfo.xcprivacy in Resources */,
+				081C13771F8991A1EBBDFE567EB2ADDC /* PrivacyInfo.xcprivacy in Resources */,
+				87550A19B459E9093AA7E8E7D983D00D /* TrackReport.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00C1724981EF9C8E58BFC7F4C4110C35 /* Sources */ = {
+		2FEC412C3E3A75B6832B23AAC90CFA43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A632B963BE841F25DAD16BC64E7BA0CD /* Logger.swift in Sources */,
-				F099F6193B4818E8F2BAA795DE4D348F /* ReportManager.swift in Sources */,
-				4B8DAB43F50DC3B2C4419E118221DE57 /* RequestPath.swift in Sources */,
-				90AB0B22727B594FE7BF63FC96D194C1 /* TrackReport-dummy.m in Sources */,
-				25B8FB3B7D573D9E45289A833CB6569B /* TrackReportKit.swift in Sources */,
-				27C588DF502962392B6CECB022EA2280 /* UserDefaults.swift in Sources */,
+				30AFB214738F4762E5DFD41457BDB7CB /* AppVersionCheckTool.swift in Sources */,
+				52DF59ED72272686765DC60F50CCB061 /* LanguageTool.swift in Sources */,
+				3C2D9D773D9B77881BC0B5A68FCC443B /* Logger.swift in Sources */,
+				4679AF980E6EE84A0098F6B3C52B0C55 /* ReportManager.swift in Sources */,
+				438071C81349A60AF71200D7682FCC30 /* RequestPath.swift in Sources */,
+				EA8F81669B6489C59E788114A1B16740 /* TrackReport-dummy.m in Sources */,
+				6B85222B0B0893B1A8BFBD82694FE4A6 /* TrackReportKit.swift in Sources */,
+				61A9A87876256E02AEE6E9F5C9A08803 /* UserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,18 +353,57 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0ABFDDF6FF094B01A1D93496610837BA /* PBXTargetDependency */ = {
+		16ADF478ABC4F9A6C6D1ECDA226D28D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TrackReport;
 			target = 1866F5E2AB34515C67D7EDBD33792C40 /* TrackReport */;
-			targetProxy = 43F79FC87DD6FDFB6A76A08B46F18969 /* PBXContainerItemProxy */;
+			targetProxy = 523E6AF63A14BE8D7D85CAD2DCE43EF8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		23FBC2FBBE296660B186D44D34171FC5 /* Release */ = {
+		0CC10D6F2A4F29A825A3990B96A1996A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A06CF1F9C5474F68F4F52E5AAE5AD71 /* TrackReport.release.xcconfig */;
+			baseConfigurationReference = 306FC051121337ABB50C58C00F68ADB0 /* TrackReport.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/TrackReport/TrackReport-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/TrackReport/TrackReport-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TrackReport/TrackReport.modulemap";
+				PRODUCT_MODULE_NAME = TrackReport;
+				PRODUCT_NAME = TrackReport;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		27AC35EDF2345E0064A7DEE0522C4877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 529A988AD728F3A094B6487A6AFCB89B /* TrackReport.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -421,45 +474,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8C88C57AF4FF84C91F9A0F67F326E8F0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF9A082604AB84ECB1A94BA585DA7129 /* TrackReport.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/TrackReport/TrackReport-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Target Support Files/TrackReport/TrackReport-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/TrackReport/TrackReport.modulemap";
-				PRODUCT_MODULE_NAME = TrackReport;
-				PRODUCT_NAME = TrackReport;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -637,15 +651,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BE518D31DD60AF6F72E25A7A1E59D9E /* Build configuration list for PBXNativeTarget "TrackReport" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8C88C57AF4FF84C91F9A0F67F326E8F0 /* Debug */,
-				23FBC2FBBE296660B186D44D34171FC5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -660,6 +665,15 @@
 			buildConfigurations = (
 				32EE7B18349D008EC5EAF159011E0B28 /* Debug */,
 				97760C62455D7956F795AAB5F1F0C1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEEF44A5082D73186C40534E22B34A7F /* Build configuration list for PBXNativeTarget "TrackReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CC10D6F2A4F29A825A3990B96A1996A /* Debug */,
+				27AC35EDF2345E0064A7DEE0522C4877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

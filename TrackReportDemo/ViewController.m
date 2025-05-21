@@ -23,6 +23,7 @@
 //    [TrackReportKit tr_subscriptionWithTransactionId:@"12123" page:TrackReportSubscriptionTypeNewSubscription];
     
 //    [TrackReportKit tr_customEventWithEventId:@"123123" behaviorContent:@"哈哈哈"];
+    [TrackReportKit tr_checkAppVersionWithAutoPopAlter];
 }
 
 

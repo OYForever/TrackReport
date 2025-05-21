@@ -61,3 +61,12 @@ public class TrackReportKit: NSObject {
         ReportManager.shared.customEvent(with: eventId, behaviorContent: behaviorContent)
     }
 }
+
+// MARK: - App Store
+public
+extension TrackReportKit {
+    @objc(tr_checkAppVersionWithAutoPopAlter)
+    class func checkAppVersionWithAutoPopAlter() {
+        AppVersionCheckTool.checkAppVersionWithAutoPopAlter()
+    }
+}

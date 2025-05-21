@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "TrackReport"
-  s.version          = "1.0.2"
+  s.version          = "1.0.3"
   s.summary          = "TrackReport components"
   
   
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.swift_versions = "5.0"
   
   s.source_files = "TrackReport/src/**/*.{swift}"
-  s.resources = ["TrackReport/src/Resource/PrivacyInfo.xcprivacy"]
+  s.resources = ["TrackReport/src/Resource/PrivacyInfo.xcprivacy", "TrackReport/src/Resource/TrackReport.bundle"]
   s.preserve_paths = "TrackReport/src/**/*"
   
 end
