@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		01254FC18CFBB894433AB065450BC285 /* Pods-TrackReportDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TrackReportDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		113E44D53792A8F8CABD7EB3C96CEE8F /* UserDefaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		21BB35C7D5BE946B14B87B942BDD9A6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		21BB35C7D5BE946B14B87B942BDD9A6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		240412E4F4F533CB9EFB0ACA65A1FB22 /* AppVersionCheckTool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppVersionCheckTool.swift; sourceTree = "<group>"; };
 		306FC051121337ABB50C58C00F68ADB0 /* TrackReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrackReport.debug.xcconfig; sourceTree = "<group>"; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -45,15 +45,15 @@
 		41067E195F4FE23BA3B298EC5C5DD4BE /* LanguageTool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LanguageTool.swift; sourceTree = "<group>"; };
 		529A988AD728F3A094B6487A6AFCB89B /* TrackReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrackReport.release.xcconfig; sourceTree = "<group>"; };
 		59A0CA2C4D2DBDF66313BC85F9C1A469 /* TrackReport-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TrackReport-Info.plist"; sourceTree = "<group>"; };
-		5DEF7126123915A4FF49C20CB21BD4C8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = TrackReport/src/Resource/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		6737C7127D3B497B275464F03268680E /* Pods-TrackReportDemo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TrackReportDemo"; path = Pods_TrackReportDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DEF7126123915A4FF49C20CB21BD4C8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = TrackReport/src/Resource/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6737C7127D3B497B275464F03268680E /* Pods_TrackReportDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackReportDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6857257F38DF930167B7ED97CF183D /* TrackReportKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackReportKit.swift; path = TrackReport/src/TrackReportKit.swift; sourceTree = "<group>"; };
-		71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TrackReport; path = TrackReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrackReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A99BE6BA3B97C576D2CE434D8D1D532 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		8B8452106F7C48E659F01AF1A1081C8D /* Pods-TrackReportDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackReportDemo-Info.plist"; sourceTree = "<group>"; };
 		8F23AD6893C601D187D3291B8E451416 /* RequestPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
 		90CBE9F554BD3D879B940CDAD2040C46 /* Pods-TrackReportDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TrackReportDemo-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AA90CD4BB3212CBC6D53857714DAA2E0 /* TrackReport.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TrackReport.modulemap; sourceTree = "<group>"; };
 		B4C959E875588CB3DDE395B1A546141B /* Pods-TrackReportDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackReportDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B75F9687567A24D39FA3FB9F955D6669 /* TrackReport-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrackReport-umbrella.h"; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		DC8892BA861F13D1D1E4BDEA345222BC /* Pods-TrackReportDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackReportDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		DF85504B690DAE7E3389A275C80142C8 /* TrackReport-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrackReport-prefix.pch"; sourceTree = "<group>"; };
 		E7880BEFD0C6DE7985F28D678E021DC3 /* TrackReport-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TrackReport-dummy.m"; sourceTree = "<group>"; };
-		EEEB999378FFB9905AF5487E877A7F93 /* TrackReport.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TrackReport.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EEEB999378FFB9905AF5487E877A7F93 /* TrackReport.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TrackReport.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		FAB04CF0B4A9A649AB03C57B21C2FAA2 /* Pods-TrackReportDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TrackReportDemo-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,8 +120,8 @@
 		AC0AFA90F4796568072E9E7DA9411C2D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6737C7127D3B497B275464F03268680E /* Pods-TrackReportDemo */,
-				71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport */,
+				6737C7127D3B497B275464F03268680E /* Pods_TrackReportDemo.framework */,
+				71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 			);
 			name = TrackReport;
 			productName = TrackReport;
-			productReference = 71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport */;
+			productReference = 71498E86FFCFFC63BBF6D86E3B5BE3C9 /* TrackReport.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		79D1A8BF5734D1074D96F13CCE159070 /* Pods-TrackReportDemo */ = {
@@ -274,7 +274,7 @@
 			);
 			name = "Pods-TrackReportDemo";
 			productName = Pods_TrackReportDemo;
-			productReference = 6737C7127D3B497B275464F03268680E /* Pods-TrackReportDemo */;
+			productReference = 6737C7127D3B497B275464F03268680E /* Pods_TrackReportDemo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -295,8 +295,6 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = AC0AFA90F4796568072E9E7DA9411C2D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

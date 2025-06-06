@@ -37,6 +37,15 @@ public class TrackReportKit: NSObject {
         ReportManager.shared.config(host: host, appId: appId)
     }
     
+    /// 获取APP配置
+    /// - Parameters:
+    ///   - id: 配置项的ID
+    ///   - complete: 值的回调
+    @objc(tr_getAppConfigWithId:complete:)
+    public class func getAppConfig(with id: String, complete: ((String?) -> Void)? = nil) {
+        ReportManager.shared.getAppConfig(with: id, complete: complete)
+    }
+    
     /// 新增用户，只需调用一次
     @objc
     public class func registerUser() {
@@ -65,8 +74,10 @@ public class TrackReportKit: NSObject {
 // MARK: - App Store
 public
 extension TrackReportKit {
-    @objc(tr_checkAppVersionWithAutoPopAlter)
-    class func checkAppVersionWithAutoPopAlter() {
-        AppVersionCheckTool.checkAppVersionWithAutoPopAlter()
+    /// 检查APP版本更新
+    /// - Parameter complete: 线上版本号回调
+    @objc(tr_checkAppVersionWithAutoPopAlterWithComplete:)
+    class func checkAppVersionWithAutoPopAlter(complete: ((String?) -> Void)? = nil) {
+        AppVersionCheckTool.checkAppVersionWithAutoPopAlter(complete: complete)
     }
 }

@@ -8,6 +8,8 @@
 import Foundation
 
 struct RequestPath {
+    /// 获取配置
+    static let appConfig = "/appts/rdb/configs"
     /// 新增用户
     static let addUser = "/appts/rdb/users"
     /// 更新token

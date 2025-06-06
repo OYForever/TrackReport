@@ -8,19 +8,22 @@
 import Foundation
 
 struct AppVersionCheckTool {
-    static func checkAppVersionWithAutoPopAlter() {
+    static func checkAppVersionWithAutoPopAlter(complete: ((String?) -> Void)? = nil) {
         let urlString = "https://itunes.apple.com/lookup?bundleId=" + (Bundle.main.bundleIdentifier ?? "com.tayue.collage")
         guard let url = URL(string: urlString) else {
             kLog("无效的 URL: \(urlString)")
+            complete?(nil)
             return
         }
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
             if let error = error {
                 kLog("获取app版本请求失败: \(error)")
+                complete?(nil)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else {
                 kLog("无效的响应")
+                complete?(nil)
                 return
             }
             kLog("获取app版本请求响应状态码: \(httpResponse.statusCode)")
@@ -34,6 +37,7 @@ struct AppVersionCheckTool {
                 let appUrl = appInfo["trackViewUrl"] as? String,
                 let currentAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
             {
+                complete?(appVersion)
                 if appVersion.compare(currentAppVersion, options: .numeric) == .orderedDescending {
                     kLog("有新APP版本: \(appVersion)\n更新内容:\n\(appUpdateDesc)")
                     DispatchQueue.main.async {
@@ -92,6 +96,7 @@ struct AppVersionCheckTool {
                 }
             } else {
                 kLog("获取app版本请求结果解析失败")
+                complete?(nil)
             }
         }
         // 启动任务

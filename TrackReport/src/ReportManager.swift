@@ -62,6 +62,65 @@ extension ReportManager {
         case token = "ReportManagerUserDefaultsKeys_token"
     }
 
+    func getAppConfig(with id: String, complete: ((String?) -> Void)? = nil) {
+        let urlString = baseUrl + RequestPath.appConfig
+        guard let url = URL(string: urlString) else {
+            kLog("无效的 URL: \(urlString)")
+            complete?(nil)
+            return
+        }
+        // 2. 创建 URLRequest
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.timeoutInterval = 10
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        // 3. 准备要发送的 JSON 数据
+        let requestBody: [String: Any] = [
+            "id": id,
+            "ratio": true
+        ]
+        // 4. 将字典转换为 JSON Data
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: requestBody, options: [])
+            request.httpBody = jsonData
+            kLog("获取APP配置请求: \(urlString), 数据: \(requestBody)")
+        } catch {
+            kLog("JSON 序列化失败: \(error)")
+            complete?(nil)
+            return
+        }
+        // 5. 发送网络请求
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            // 6. 处理响应
+            if let error = error {
+                kLog("获取APP配置失败: \(error)")
+                complete?(nil)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                kLog("无效的响应")
+                complete?(nil)
+                return
+            }
+            kLog("获取APP配置响应状态码: \(httpResponse.statusCode)")
+            if
+                let data,
+                let responseString = String(data: data, encoding: .utf8),
+                let jsonResponse = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+                let data = jsonResponse["data"] as? [[String: Any]],
+                let value = data.first?["configItem"] as? String
+            {
+                kLog("获取APP配置响应内容: \(responseString)")
+                complete?(value)
+            } else {
+                kLog("获取APP配置响应解析失败")
+                complete?(nil)
+            }
+        }
+        // 启动任务
+        task.resume()
+    }
+    
     func registerUser() {
         // 1. 拼接完整的 URL
         let urlString = baseUrl + RequestPath.addUser
