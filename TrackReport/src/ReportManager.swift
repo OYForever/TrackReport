@@ -354,7 +354,7 @@ extension TrackReportSubscriptionPage {
         switch self {
         case .subscriptionPage: "订阅页"
         case .guideSubscriptionPage: "引导订阅页"
-        case .guideSubscriptionRecoveryPage: "引导订阅挽回页"
+        case .guideSubscriptionRetrievePage: "引导订阅挽回页"
         case .homePopPage: "首页弹窗"
         case .automaticRenewal: "自动续费"
         case .newSubscription: "新增订阅"

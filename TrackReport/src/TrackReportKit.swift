@@ -15,7 +15,7 @@ public enum TrackReportSubscriptionPage: Int {
     /// 引导订阅页
     case guideSubscriptionPage
     /// 引导订阅挽回页
-    case guideSubscriptionRecoveryPage
+    case guideSubscriptionRetrievePage
     /// 首页弹窗
     case homePopPage
     /// 新增订阅
