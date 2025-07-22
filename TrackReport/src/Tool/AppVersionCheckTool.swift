@@ -9,13 +9,13 @@ import Foundation
 
 struct AppVersionCheckTool {
     static func checkAppVersionWithAutoPopAlter(complete: ((String?) -> Void)? = nil) {
-        let urlString = "https://itunes.apple.com/lookup?bundleId=" + (Bundle.main.bundleIdentifier ?? "com.tayue.collage")
+        let urlString = "https://itunes.apple.com/lookup?bundleId=\((Bundle.main.bundleIdentifier ?? "com.tayue.collage"))&t=\(Date().timeIntervalSince1970)"
         guard let url = URL(string: urlString) else {
             kLog("无效的 URL: \(urlString)")
             complete?(nil)
             return
         }
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)) { data, response, error in
             if let error = error {
                 kLog("获取app版本请求失败: \(error)")
                 complete?(nil)
