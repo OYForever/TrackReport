@@ -13,13 +13,10 @@ Pod::Spec.new do |s|
   
   s.source_files = "TrackReport/src/**/*.{swift}"
   s.resources = [
-    "TrackReport/src/Resource/PrivacyInfo.xcprivacy",
-    "TrackReport/src/Resource/TrackReport.bundle",
-    "TrackReport/src/README.md",
+    "TrackReport/src/Resource/TrackReport.bundle"
   ]
-  s.preserve_paths = "TrackReport/src/**/*"
+  s.resource_bundle = { 'TrackReport_Privacy' => ["TrackReport/src/Resource/PrivacyInfo.xcprivacy"] }
   
-  s.static_framework = true
   s.dependency "FirebaseAnalytics"
   s.dependency "FirebaseRemoteConfig"
   s.dependency "FirebaseCrashlytics"

@@ -19,8 +19,6 @@
     "TrackReport/src/Resource/TrackReport.bundle",
     "TrackReport/src/README.md"
   ],
-  "preserve_paths": "TrackReport/src/**/*",
-  "static_framework": true,
   "dependencies": {
     "FirebaseAnalytics": [],
     "FirebaseRemoteConfig": [],
