@@ -7,14 +7,16 @@
 
 import AppTrackingTransparency
 import Combine
+import FirebaseAnalytics
 import FirebaseCore
 import FirebaseRemoteConfig
 import Foundation
+import StoreKit
 
 final class FirebaseManager {
     static let shared = FirebaseManager()
     private var cancellables = Set<AnyCancellable>()
-    
+
     private var remoteConfig: RemoteConfig?
     private var isFetching = false
     private var pendingCompletions: [(Bool) -> Void] = []
@@ -38,13 +40,13 @@ final class FirebaseManager {
 
     func config() {
         FirebaseApp.configure()
-        
+
         remoteConfig = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
         remoteConfig?.configSettings = settings
     }
-    
+
     /// 对外提供的获取RemoteConfig方法（支持多次异步调用）
     /// - Parameters:
     ///   - key: 配置键名
@@ -56,7 +58,7 @@ final class FirebaseManager {
             complete?(nil)
             return
         }
-        
+
         // 3. 调用fetchAndActivate，并传入“获取到配置后的回调”
         fetchAndActivate { success in
             if success {
@@ -65,6 +67,13 @@ final class FirebaseManager {
                 complete?(nil)
             }
         }
+    }
+
+    /// 提交交易事件
+    /// - Parameter transaction: 交易对象
+    @available(iOS 15.0, *)
+    func logTransaction(_ transaction: Transaction) {
+        Analytics.logTransaction(transaction)
     }
 }
 
@@ -75,31 +84,31 @@ private extension FirebaseManager {
         // 4. 确保在同一队列中操作（避免多线程竞争isFetching和pendingCompletions）
         DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
-            
+
             // 将当前回调加入等待队列
             self.pendingCompletions.append(completion)
-            
+
             // 如果正在请求中，直接返回（等待已有请求完成）
             guard !self.isFetching else {
                 kLog("已有RemoteConfig请求在执行，当前请求加入等待队列（队列长度：\(self.pendingCompletions.count)）")
                 return
             }
-            
+
             // 标记为“正在请求中”
             self.isFetching = true
             kLog("发起RemoteConfig请求（等待队列长度：\(self.pendingCompletions.count)）")
-            
+
             // 发起远程请求
-            self.remoteConfig?.fetch { [weak self] status, error in
+            self.remoteConfig?.fetch { [weak self] _, error in
                 guard let self = self else { return }
-                
+
                 var fetchSuccess = false
                 if let error = error {
                     kLog("RemoteConfig fetch失败: \(error.localizedDescription)")
                 } else {
                     fetchSuccess = true
                 }
-                
+
                 // 激活配置（无论fetch是否成功，都尝试激活本地缓存）
                 self.remoteConfig?.activate { changed, activateError in
                     let finalSuccess = fetchSuccess && (activateError == nil)
@@ -110,12 +119,12 @@ private extension FirebaseManager {
                     } else {
                         kLog("RemoteConfig 配置未变更（使用缓存值）")
                     }
-                    
+
                     // 5. 执行所有等待中的回调，并清空队列
                     let pendingCompletions = self.pendingCompletions
                     self.pendingCompletions.removeAll()
                     self.isFetching = false // 重置“请求中”标记
-                    
+
                     // 回调结果（确保在主线程，避免UI线程问题）
                     DispatchQueue.main.async {
                         pendingCompletions.forEach { $0(finalSuccess) }

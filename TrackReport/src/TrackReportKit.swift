@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import StoreKit
 
 /// 订阅所在页面
 @objc
@@ -53,13 +54,23 @@ public class TrackReportKit: NSObject {
         ReportManager.shared.registerUser()
     }
     
-    /// 用户订阅成功
+    /// 用户订阅成功（Storekit 1）
     /// - Parameters:
     ///   - transactionId: 交易id
     ///   - page: 订阅所在页面
     @objc(tr_subscriptionWithTransactionId:page:)
     public class func subscription(with transactionId: String, page: TrackReportSubscriptionPage) {
         ReportManager.shared.subscription(with: transactionId, page: page)
+    }
+    
+    /// 用户订阅成功（Storekit 2）
+    /// - Parameters:
+    ///   - transaction: 交易对象
+    ///   - page: 订阅所在页面
+    @available(iOS 15.0, *)
+    public class func subscription(with transaction: Transaction, page: TrackReportSubscriptionPage) {
+        FirebaseManager.shared.logTransaction(transaction)
+        ReportManager.shared.subscription(with: "\(transaction.id)", page: page)
     }
     
     /// 自定义事件
