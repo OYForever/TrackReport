@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "TrackReport"
-  s.version          = "1.0.6"
+  s.version          = "1.1.0"
   s.summary          = "TrackReport components"
   
   
@@ -12,7 +12,18 @@ Pod::Spec.new do |s|
   s.swift_versions = "5.0"
   
   s.source_files = "TrackReport/src/**/*.{swift}"
-  s.resources = ["TrackReport/src/Resource/PrivacyInfo.xcprivacy", "TrackReport/src/Resource/TrackReport.bundle"]
+  s.resources = [
+    "TrackReport/src/Resource/PrivacyInfo.xcprivacy",
+    "TrackReport/src/Resource/TrackReport.bundle",
+    "TrackReport/src/README.md",
+  ]
   s.preserve_paths = "TrackReport/src/**/*"
+  
+  s.static_framework = true
+  s.dependency "FirebaseAnalytics"
+  s.dependency "FirebaseRemoteConfig"
+  s.dependency "FirebaseCrashlytics"
+  
+  s.frameworks = "AdSupport"
   
 end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F3438DD67C1611B619CD827 /* Pods_TrackReportDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662B68D7428525A58FC1CA58 /* Pods_TrackReportDemo.framework */; };
+		5348021F2E78207F008F2BBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5348021E2E78207F008F2BBC /* GoogleService-Info.plist */; };
 		53B1F6EC2DBDFC95001A67AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1F6DF2DBDFC95001A67AE /* AppDelegate.m */; };
 		53B1F6ED2DBDFC95001A67AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1F6E42DBDFC95001A67AE /* main.m */; };
 		53B1F6EE2DBDFC95001A67AE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1F6E82DBDFC95001A67AE /* SceneDelegate.m */; };
@@ -15,7 +16,6 @@
 		53B1F6F02DBDFC95001A67AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E02DBDFC95001A67AE /* Assets.xcassets */; };
 		53B1F6F22DBDFC95001A67AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E32DBDFC95001A67AE /* LaunchScreen.storyboard */; };
 		53B1F6F32DBDFC95001A67AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E62DBDFC95001A67AE /* Main.storyboard */; };
-		53B1F7292DC07997001A67AE /* TrackReport.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F7282DC07997001A67AE /* TrackReport.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		0335B347082E1468824D27A4 /* Pods-TrackReportDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackReportDemo.release.xcconfig"; path = "Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo.release.xcconfig"; sourceTree = "<group>"; };
+		5348021B2E77E4D7008F2BBC /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		5348021E2E78207F008F2BBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		534802202E7910E8008F2BBC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = TrackReport/src/README.md; sourceTree = SOURCE_ROOT; };
 		53B1F6C12DBDFC8E001A67AE /* TrackReportDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackReportDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B1F6DE2DBDFC95001A67AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		53B1F6DF2DBDFC95001A67AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 		53B1F6EB2DBDFC95001A67AE /* TrackReportDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5348021E2E78207F008F2BBC /* GoogleService-Info.plist */,
+				534802202E7910E8008F2BBC /* README.md */,
 				53B1F7282DC07997001A67AE /* TrackReport.podspec */,
 				53B1F6DE2DBDFC95001A67AE /* AppDelegate.h */,
 				53B1F6DF2DBDFC95001A67AE /* AppDelegate.m */,
@@ -142,6 +147,7 @@
 				53FDC6832DDDA573004207D0 /* UserDefaults.swift */,
 				53FDC68A2DDDAAB4004207D0 /* LanguageTool.swift */,
 				53FDC68D2DDDB290004207D0 /* AppVersionCheckTool.swift */,
+				5348021B2E77E4D7008F2BBC /* FirebaseManager.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 				53B1F6BF2DBDFC8E001A67AE /* Resources */,
 				53B1F7052DBDFCB9001A67AE /* Embed Frameworks */,
 				03B51F175B4AC6DEFAE76C9D /* [CP] Embed Pods Frameworks */,
+				AE3DADBBAEBC343963215E85 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,7 +211,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					53B1F6C02DBDFC8E001A67AE = {
 						CreatedOnToolsVersion = 16.2;
@@ -236,8 +243,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53B1F7292DC07997001A67AE /* TrackReport.podspec in Resources */,
 				53B1F6F02DBDFC95001A67AE /* Assets.xcassets in Resources */,
+				5348021F2E78207F008F2BBC /* GoogleService-Info.plist in Resources */,
 				53B1F6F22DBDFC95001A67AE /* LaunchScreen.storyboard in Resources */,
 				53B1F6F32DBDFC95001A67AE /* Main.storyboard in Resources */,
 			);
@@ -283,6 +290,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE3DADBBAEBC343963215E85 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

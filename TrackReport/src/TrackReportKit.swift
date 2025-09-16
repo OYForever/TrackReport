@@ -35,6 +35,7 @@ public class TrackReportKit: NSObject {
     @objc(tr_configWithHost:appId:)
     public class func config(host: String = "https://mac.bsfss.com", appId: String) {
         ReportManager.shared.config(host: host, appId: appId)
+        FirebaseManager.shared.config()
     }
     
     /// 获取APP配置
@@ -43,7 +44,7 @@ public class TrackReportKit: NSObject {
     ///   - complete: 值的回调
     @objc(tr_getAppConfigWithId:complete:)
     public class func getAppConfig(with id: String, complete: ((String?) -> Void)? = nil) {
-        ReportManager.shared.getAppConfig(with: id, complete: complete)
+        FirebaseManager.shared.getRemoteConfig(key: id, complete: complete)
     }
     
     /// 新增用户，只需调用一次
