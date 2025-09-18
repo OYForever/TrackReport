@@ -16,6 +16,7 @@
 		53B1F6F02DBDFC95001A67AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E02DBDFC95001A67AE /* Assets.xcassets */; };
 		53B1F6F22DBDFC95001A67AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E32DBDFC95001A67AE /* LaunchScreen.storyboard */; };
 		53B1F6F32DBDFC95001A67AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6E62DBDFC95001A67AE /* Main.storyboard */; };
+		53D2412E2E7BD8C500543E8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 53D2412D2E7BD8C500543E8F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,7 +36,6 @@
 		0335B347082E1468824D27A4 /* Pods-TrackReportDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackReportDemo.release.xcconfig"; path = "Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5348021B2E77E4D7008F2BBC /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		5348021E2E78207F008F2BBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		534802202E7910E8008F2BBC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = TrackReport/src/README.md; sourceTree = SOURCE_ROOT; };
 		53B1F6C12DBDFC8E001A67AE /* TrackReportDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackReportDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B1F6DE2DBDFC95001A67AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		53B1F6DF2DBDFC95001A67AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +49,7 @@
 		53B1F6E92DBDFC95001A67AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		53B1F6EA2DBDFC95001A67AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		53B1F7282DC07997001A67AE /* TrackReport.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrackReport.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		53D2412D2E7BD8C500543E8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		53FDC67E2DDDA573004207D0 /* RequestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
 		53FDC6802DDDA573004207D0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		53FDC6822DDDA573004207D0 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -106,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				5348021E2E78207F008F2BBC /* GoogleService-Info.plist */,
-				534802202E7910E8008F2BBC /* README.md */,
+				53D2412D2E7BD8C500543E8F /* README.md */,
 				53B1F7282DC07997001A67AE /* TrackReport.podspec */,
 				53B1F6DE2DBDFC95001A67AE /* AppDelegate.h */,
 				53B1F6DF2DBDFC95001A67AE /* AppDelegate.m */,
@@ -244,6 +245,7 @@
 			files = (
 				53B1F6F02DBDFC95001A67AE /* Assets.xcassets in Resources */,
 				5348021F2E78207F008F2BBC /* GoogleService-Info.plist in Resources */,
+				53D2412E2E7BD8C500543E8F /* README.md in Resources */,
 				53B1F6F22DBDFC95001A67AE /* LaunchScreen.storyboard in Resources */,
 				53B1F6F32DBDFC95001A67AE /* Main.storyboard in Resources */,
 			);
@@ -282,9 +284,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
