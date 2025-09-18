@@ -3,6 +3,7 @@
 2.需要再Info.plist文件中添加 NSUserTrackingUsageDescription 描述
 
 3.添加以下值到Info.plist文件
+```xml
 <key>SKAdNetworkItems</key>
 <array>
     <dict>
