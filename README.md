@@ -1,8 +1,7 @@
 1.将Firebase下载的GoogleService-Info.plist文件放到项目目录
 
-2.需要再Info.plist文件中添加 NSUserTrackingUsageDescription 描述
 2. 需要在 Info.plist 文件中添加多语言的 `NSUserTrackingUsageDescription` 描述（iOS 14+ 必配，用于说明用户跟踪权限用途，适配不同地区用户）：
-```
+```xml
 <!-- Info.plist 多语言 NSUserTrackingUsageDescription 配置 -->
 <!-- 英语 -->
 "NSUserTrackingUsageDescription" = "We want to understand which ad led to your download, so we can provide you with more relevant content. You can choose whether to allow this.";
