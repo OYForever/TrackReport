@@ -15,10 +15,18 @@
   "swift_versions": "5.0",
   "source_files": "TrackReport/src/**/*.{swift}",
   "resources": [
-    "TrackReport/src/Resource/PrivacyInfo.xcprivacy",
-    "TrackReport/src/Resource/TrackReport.bundle",
-    "TrackReport/src/README.md"
+    "TrackReport/src/Resource/TrackReport.bundle"
   ],
+  "resource_bundles": {
+    "TrackReport_Privacy": [
+      "TrackReport/src/Resource/PrivacyInfo.xcprivacy"
+    ]
+  },
+  "static_framework": true,
+  "pod_target_xcconfig": {
+    "MACH_O_TYPE": "staticlib",
+    "OTHER_LDFLAGS": "-ObjC"
+  },
   "dependencies": {
     "FirebaseAnalytics": [],
     "FirebaseRemoteConfig": [],
