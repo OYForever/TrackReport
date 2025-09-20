@@ -1,10 +1,3 @@
-//
-//  FirebaseManager.swift
-//  TrackReportDemo
-//
-//  Created by 笔尚文化 on 2025/9/15.
-//
-
 import AppTrackingTransparency
 import Combine
 import FirebaseAnalytics
@@ -14,141 +7,173 @@ import Foundation
 import StoreKit
 
 final class FirebaseManager {
+    // MARK: - 单例与初始化
     static let shared = FirebaseManager()
+    private init() { setupTrackingAuthorization() }
+
+    // MARK: - 私有属性
     private var cancellables = Set<AnyCancellable>()
-
     private var remoteConfig: RemoteConfig?
+    private let serialQueue = DispatchQueue(label: "com.firebase.manager.serial") // 专用串行队列确保线程安全
     private var isFetching = false
-    private var pendingCompletions: [(Bool) -> Void] = []
+    private var pendingCompletions: [@convention(block) (Bool) -> Void] = [] // OC兼容的回调类型
 
-    private init() {
-        if #available(iOS 14, *) {
-            NotificationCenter.default.publisher(for: UIScene.didActivateNotification)
-                .filter({ _ in
-                    ATTrackingManager.trackingAuthorizationStatus == .notDetermined
-                })
-                .sink(receiveValue: { _ in
-                    DispatchQueue.main.async {
-                        ATTrackingManager.requestTrackingAuthorization {
-                            kLog("请求IDFA的授权，结果：\($0.description)（原始值：\($0.rawValue)）")
-                        }
-                    }
-                })
-                .store(in: &cancellables)
-        }
-    }
-
-    func config() {
+    // MARK: - 公开方法
+    /// 初始化Firebase配置
+    func configure() {
+        guard FirebaseApp.app() == nil else { return } // 避免重复初始化
         FirebaseApp.configure()
 
-        remoteConfig = RemoteConfig.remoteConfig()
+        // 配置RemoteConfig
         let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
+        settings.minimumFetchInterval = 0 // 开发环境：立即获取；生产环境建议设为3600
+        remoteConfig = RemoteConfig.remoteConfig()
         remoteConfig?.configSettings = settings
     }
 
-    /// 对外提供的获取RemoteConfig方法（支持多次异步调用）
+    /// 获取RemoteConfig配置值
     /// - Parameters:
     ///   - key: 配置键名
-    ///   - complete: 结果回调（返回对应key的字符串值）
-    func getRemoteConfig(key: String, complete: ((String?) -> Void)? = nil) {
-        // 先检查RemoteConfig是否已初始化
+    ///   - completion: 结果回调（主线程执行）
+    func getRemoteConfig(key: String, completion: ((String?) -> Void)? = nil) {
         guard let remoteConfig = remoteConfig else {
-            kLog("RemoteConfig 未初始化，请先调用 config()")
-            complete?(nil)
+            kLog("❌ RemoteConfig未初始化，请先调用configure()")
+            DispatchQueue.main.async { completion?(nil) }
             return
         }
 
-        // 3. 调用fetchAndActivate，并传入“获取到配置后的回调”
         fetchAndActivate { success in
-            if success {
-                complete?(remoteConfig.configValue(forKey: key).stringValue)
-            } else {
-                complete?(nil)
-            }
+            let value = success ? remoteConfig.configValue(forKey: key).stringValue : nil
+            completion?(value)
         }
     }
 
-    /// 提交交易事件
-    /// - Parameter transaction: 交易对象
+    /// 提交交易事件（iOS 15+）
     @available(iOS 15.0, *)
     func logTransaction(_ transaction: Transaction) {
         Analytics.logTransaction(transaction)
+        kLog("📊 已记录交易事件: \(transaction.productID)")
     }
-}
 
-private extension FirebaseManager {
-    /// 控制串行执行的fetchAndActivate（支持多回调等待）
-    /// - Parameter completion: 单个请求的回调
-    func fetchAndActivate(completion: @escaping (Bool) -> Void) {
-        // 4. 确保在同一队列中操作（避免多线程竞争isFetching和pendingCompletions）
-        DispatchQueue.global().async { [weak self] in
-            guard let self = self else { return }
+    // MARK: - 私有方法
+    /// 配置IDFA授权请求
+    private func setupTrackingAuthorization() {
+        guard #available(iOS 14, *) else { return }
+        NotificationCenter.default.publisher(for: UIScene.didActivateNotification)
+            .filter { _ in ATTrackingManager.trackingAuthorizationStatus == .notDetermined }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.requestTrackingAuthorization()
+            }
+            .store(in: &cancellables)
+    }
 
-            // 将当前回调加入等待队列
-            self.pendingCompletions.append(completion)
+    /// 请求IDFA授权
+    @available(iOS 14, *)
+    private func requestTrackingAuthorization() {
+        ATTrackingManager.requestTrackingAuthorization { status in
+            kLog("📱 IDFA授权结果: \(status.description)（原始值：\(status.rawValue)）")
+            // 授权状态变化后可触发后续逻辑（如上报事件）
+            Analytics.logEvent("idfa_authorization", parameters: [
+                "status": status.rawValue,
+                "description": status.description,
+            ])
+        }
+    }
 
-            // 如果正在请求中，直接返回（等待已有请求完成）
-            guard !self.isFetching else {
-                kLog("已有RemoteConfig请求在执行，当前请求加入等待队列（队列长度：\(self.pendingCompletions.count)）")
+    /// 串行执行fetchAndActivate，支持多回调等待
+    private func fetchAndActivate(completion: @escaping (Bool) -> Void) {
+        // 包装回调为OC兼容类型，并确保在主线程执行
+        let objcCompletion: @convention(block) (Bool) -> Void = { success in
+            DispatchQueue.main.async { completion(success) }
+        }
+
+        serialQueue.async { [weak self] in
+            guard let self = self else {
+                DispatchQueue.main.async { completion(false) }
                 return
             }
 
-            // 标记为“正在请求中”
-            self.isFetching = true
-            kLog("发起RemoteConfig请求（等待队列长度：\(self.pendingCompletions.count)）")
+            // 添加到等待队列
+            self.pendingCompletions.append(objcCompletion)
 
-            // 发起远程请求
-            self.remoteConfig?.fetch { [weak self] _, error in
+            // 已有请求正在执行，等待即可
+            guard !self.isFetching else {
+                kLog("⏳ 已有RemoteConfig请求，等待队列长度: \(self.pendingCompletions.count)")
+                return
+            }
+
+            // 执行请求
+            self.performFetch()
+        }
+    }
+
+    /// 执行实际的fetch操作
+    private func performFetch() {
+        guard let remoteConfig = remoteConfig else {
+            handleCompletions(success: false)
+            return
+        }
+
+        isFetching = true
+        kLog("🚀 发起RemoteConfig请求，等待队列长度: \(pendingCompletions.count)")
+
+        remoteConfig.fetch { [weak self] _, error in
+            guard let self = self else { return }
+
+            let fetchSuccess = error == nil
+            if let error = error {
+                kLog("❌ RemoteConfig fetch失败: \(error.localizedDescription)")
+            }
+
+            // 激活配置（无论fetch是否成功，都尝试激活本地缓存）
+            remoteConfig.activate { [weak self] changed, activateError in
                 guard let self = self else { return }
 
-                var fetchSuccess = false
-                if let error = error {
-                    kLog("RemoteConfig fetch失败: \(error.localizedDescription)")
-                } else {
-                    fetchSuccess = true
-                }
-
-                // 激活配置（无论fetch是否成功，都尝试激活本地缓存）
-                self.remoteConfig?.activate { changed, activateError in
-                    let finalSuccess = fetchSuccess && (activateError == nil)
-                    if let activateError = activateError {
-                        kLog("RemoteConfig activate失败: \(activateError.localizedDescription)")
-                    } else if changed {
-                        kLog("RemoteConfig 配置已更新（新值已生效）")
-                    } else {
-                        kLog("RemoteConfig 配置未变更（使用缓存值）")
-                    }
-
-                    // 5. 执行所有等待中的回调，并清空队列
-                    let pendingCompletions = self.pendingCompletions
-                    self.pendingCompletions.removeAll()
-                    self.isFetching = false // 重置“请求中”标记
-
-                    // 回调结果（确保在主线程，避免UI线程问题）
-                    DispatchQueue.main.async {
-                        pendingCompletions.forEach { $0(finalSuccess) }
-                    }
-                }
+                let finalSuccess = fetchSuccess && (activateError == nil)
+                self.handleActivationResult(changed: changed, error: activateError)
+                self.handleCompletions(success: finalSuccess)
             }
+        }
+    }
+
+    /// 处理激活结果日志
+    private func handleActivationResult(changed: Bool, error: Error?) {
+        if let error = error {
+            kLog("❌ RemoteConfig activate失败: \(error.localizedDescription)")
+        } else if changed {
+            kLog("✅ RemoteConfig配置已更新并生效")
+        } else {
+            kLog("ℹ️ RemoteConfig使用缓存配置（未变更）")
+        }
+    }
+
+    /// 处理所有等待的回调
+    private func handleCompletions(success: Bool) {
+        serialQueue.async { [weak self] in
+            guard let self = self else { return }
+
+            // 复制并清空队列（串行队列中操作，确保线程安全）
+            let completions = self.pendingCompletions
+            self.pendingCompletions.removeAll()
+            self.isFetching = false
+
+            // 执行所有回调
+            completions.forEach { $0(success) }
         }
     }
 }
 
+// MARK: - 扩展
 @available(iOS 14, *)
 private extension ATTrackingManager.AuthorizationStatus {
     var description: String {
         switch self {
-        case .notDetermined:
-            return "notDetermined（未决策：用户尚未做出选择）"
-        case .restricted:
-            return "restricted（受限制：设备设置限制，无法请求授权）"
-        case .denied:
-            return "denied（用户拒绝：用户明确不允许跟踪）"
-        case .authorized:
-            return "authorized（用户允许：用户同意跟踪，可获取IDFA）"
-        @unknown default:
-            return "unknown（未知状态：可能是未来新增的状态）"
+        case .notDetermined: return "未决策（用户尚未选择）"
+        case .restricted: return "受限制（设备设置限制）"
+        case .denied: return "已拒绝（用户不允许跟踪）"
+        case .authorized: return "已授权（允许跟踪，可获取IDFA）"
+        @unknown default: return "未知状态（\(rawValue)）"
         }
     }
 }
