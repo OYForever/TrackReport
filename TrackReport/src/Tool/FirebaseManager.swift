@@ -23,9 +23,6 @@ final class FirebaseManager {
     func configure() {
         guard FirebaseApp.app() == nil else { return } // 避免重复初始化
         FirebaseApp.configure()
-        // 配置用户默认属性
-        Analytics.setUserProperty("apple", forName: "utm_source")
-        Analytics.setUserProperty("none", forName: "utm_campaign")
         // 配置RemoteConfig
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0 // 开发环境：立即获取；生产环境建议设为3600
