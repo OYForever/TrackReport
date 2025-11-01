@@ -26,9 +26,6 @@
 //    [TrackReportKit tr_checkAppVersionWithAutoPopAlterWithComplete:^(NSString * _Nullable version) {
 //        NSLog(@"版本号：%@", version);
 //    }];
-    [TrackReportKit tr_getAppConfigWithId:@"abc" complete:^(NSString * _Nullable value) {
-        NSLog(@"APP配置值：%@", value);
-    }];
 }
 
 

@@ -129,34 +129,16 @@ final class FirebaseManager {
 
         isFetching = true
         kLog("🚀 发起RemoteConfig请求，等待队列长度: \(pendingCompletions.count)")
-
-        remoteConfig.fetch { [weak self] _, error in
+        remoteConfig.fetchAndActivate { [weak self] result, error in
             guard let self = self else { return }
-
-            let fetchSuccess = error == nil
+            let finalSuccess = error == nil
             if let error = error {
-                kLog("❌ RemoteConfig fetch失败: \(error.localizedDescription)")
+                kLog("❌ RemoteConfig fetchAndActivate失败: \(error.localizedDescription)")
+            } else {
+                kLog("✅ RemoteConfig fetchAndActivate成功，返回结果: \(result)")
             }
-
-            // 激活配置（无论fetch是否成功，都尝试激活本地缓存）
-            remoteConfig.activate { [weak self] changed, activateError in
-                guard let self = self else { return }
-
-                let finalSuccess = fetchSuccess && (activateError == nil)
-                self.handleActivationResult(changed: changed, error: activateError)
-                self.handleCompletions(success: finalSuccess)
-            }
-        }
-    }
-
-    /// 处理激活结果日志
-    private func handleActivationResult(changed: Bool, error: Error?) {
-        if let error = error {
-            kLog("❌ RemoteConfig activate失败: \(error.localizedDescription)")
-        } else if changed {
-            kLog("✅ RemoteConfig配置已更新并生效")
-        } else {
-            kLog("ℹ️ RemoteConfig使用缓存配置（未变更）")
+            
+            self.handleCompletions(success: finalSuccess)
         }
     }
 
