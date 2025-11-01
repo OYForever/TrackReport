@@ -92,4 +92,11 @@ extension TrackReportKit {
     class func checkAppVersionWithAutoPopAlter(complete: ((String?) -> Void)? = nil) {
         AppVersionCheckTool.checkAppVersionWithAutoPopAlter(complete: complete)
     }
+    
+    /// 处理深链接
+    /// - Parameter url: 深链接
+    @objc(tr_handleDeepLink:)
+    class func handleDeepLink(url: URL) {
+        FirebaseManager.shared.handleDeepLink(url: url)
+    }
 }

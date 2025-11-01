@@ -23,12 +23,27 @@ final class FirebaseManager {
     func configure() {
         guard FirebaseApp.app() == nil else { return } // 避免重复初始化
         FirebaseApp.configure()
-
+        // 配置用户默认属性
+        Analytics.setUserProperty("apple", forName: "utm_source")
+        Analytics.setUserProperty("none", forName: "utm_campaign")
         // 配置RemoteConfig
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0 // 开发环境：立即获取；生产环境建议设为3600
         remoteConfig = RemoteConfig.remoteConfig()
         remoteConfig?.configSettings = settings
+    }
+    
+    func handleDeepLink(url: URL) {
+        if let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+           let queryItems = components.queryItems {
+            for item in queryItems {
+                if item.name == "utm_source" {
+                    Analytics.setUserProperty(item.value ?? "apple", forName: "utm_source")
+                } else if item.name == "utm_campaign" {
+                    Analytics.setUserProperty(item.value ?? "none", forName: "utm_campaign")
+                }
+            }
+        }
     }
 
     /// 获取RemoteConfig配置值
