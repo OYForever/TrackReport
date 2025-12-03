@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5348021F2E78207F008F2BBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5348021E2E78207F008F2BBC /* GoogleService-Info.plist */; };
+		53A093A32EE0454C002C87A6 /* Void.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A093A22EE0454C002C87A6 /* Void.swift */; };
 		53B1F6EC2DBDFC95001A67AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1F6DF2DBDFC95001A67AE /* AppDelegate.m */; };
 		53B1F6ED2DBDFC95001A67AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1F6E42DBDFC95001A67AE /* main.m */; };
 		53B1F6EE2DBDFC95001A67AE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1F6E82DBDFC95001A67AE /* SceneDelegate.m */; };
@@ -36,6 +37,7 @@
 		0335B347082E1468824D27A4 /* Pods-TrackReportDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackReportDemo.release.xcconfig"; path = "Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5348021B2E77E4D7008F2BBC /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		5348021E2E78207F008F2BBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53A093A22EE0454C002C87A6 /* Void.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Void.swift; sourceTree = "<group>"; };
 		53B1F6C12DBDFC8E001A67AE /* TrackReportDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackReportDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B1F6DE2DBDFC95001A67AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		53B1F6DF2DBDFC95001A67AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				53B1F6E82DBDFC95001A67AE /* SceneDelegate.m */,
 				53B1F6E92DBDFC95001A67AE /* ViewController.h */,
 				53B1F6EA2DBDFC95001A67AE /* ViewController.m */,
+				53A093A22EE0454C002C87A6 /* Void.swift */,
 			);
 			path = TrackReportDemo;
 			sourceTree = "<group>";
@@ -215,7 +218,7 @@
 				TargetAttributes = {
 					53B1F6C02DBDFC8E001A67AE = {
 						CreatedOnToolsVersion = 16.2;
-						LastSwiftMigration = 1620;
+						LastSwiftMigration = 2610;
 					};
 				};
 			};
@@ -262,9 +265,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TrackReportDemo/Pods-TrackReportDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -303,6 +310,7 @@
 				53B1F6EC2DBDFC95001A67AE /* AppDelegate.m in Sources */,
 				53B1F6ED2DBDFC95001A67AE /* main.m in Sources */,
 				53B1F6EE2DBDFC95001A67AE /* SceneDelegate.m in Sources */,
+				53A093A32EE0454C002C87A6 /* Void.swift in Sources */,
 				53B1F6EF2DBDFC95001A67AE /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +370,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -402,6 +411,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -413,6 +423,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -475,6 +486,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

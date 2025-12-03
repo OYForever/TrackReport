@@ -124,7 +124,7 @@ PODS:
   - PromisesObjC (2.4.0)
   - PromisesSwift (2.4.0):
     - PromisesObjC (= 2.4.0)
-  - TrackReport (1.1.2):
+  - TrackReport (1.1.5):
     - FirebaseAnalytics
     - FirebaseCrashlytics
     - FirebaseRemoteConfig
@@ -176,7 +176,7 @@ SPEC CHECKSUMS:
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
-  TrackReport: 1460c98977c7e476e5bf0852b1ef9e3992d97cb7
+  TrackReport: e5032c237554d9f516cef36714cff1db2bd836ff
 
 PODFILE CHECKSUM: 2d436afde7a0bbc153b9a15bc2bdf7c8513e7e26
 
