@@ -1,4 +1,9 @@
 PODS:
+  - Adjust (5.5.0):
+    - Adjust/Adjust (= 5.5.0)
+  - Adjust/Adjust (5.5.0):
+    - AdjustSignature (= 3.62.0)
+  - AdjustSignature (3.62.0)
   - FirebaseABTesting (11.15.0):
     - FirebaseCore (~> 11.15.0)
   - FirebaseAnalytics (11.15.0):
@@ -124,16 +129,19 @@ PODS:
   - PromisesObjC (2.4.0)
   - PromisesSwift (2.4.0):
     - PromisesObjC (= 2.4.0)
-  - TrackReport (1.1.5):
-    - FirebaseAnalytics
-    - FirebaseCrashlytics
-    - FirebaseRemoteConfig
+  - TrackReport (2.0.0):
+    - Adjust (= 5.5.0)
+    - FirebaseAnalytics (= 11.15.0)
+    - FirebaseCrashlytics (= 11.15.0)
+    - FirebaseRemoteConfig (= 11.15.0)
 
 DEPENDENCIES:
   - TrackReport (from `./`)
 
 SPEC REPOS:
   trunk:
+    - Adjust
+    - AdjustSignature
     - FirebaseABTesting
     - FirebaseAnalytics
     - FirebaseCore
@@ -158,6 +166,8 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
+  Adjust: a0095eda439b925f809b0efbf64923c05701e937
+  AdjustSignature: 682d788005a6e21557913a9dc0381ae8d943ca0a
   FirebaseABTesting: 5e9d432834aebf27ab72100d37af44dfbe8d82f7
   FirebaseAnalytics: 6433dfd311ba78084fc93bdfc145e8cb75740eae
   FirebaseCore: efb3893e5b94f32b86e331e3bd6dadf18b66568e
@@ -176,7 +186,7 @@ SPEC CHECKSUMS:
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
-  TrackReport: e5032c237554d9f516cef36714cff1db2bd836ff
+  TrackReport: d45898e1f42d1e2eae99a42a97fe41d06f85de2f
 
 PODFILE CHECKSUM: 2d436afde7a0bbc153b9a15bc2bdf7c8513e7e26
 

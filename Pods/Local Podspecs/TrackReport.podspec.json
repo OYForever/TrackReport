@@ -1,13 +1,13 @@
 {
   "name": "TrackReport",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "summary": "TrackReport components",
   "homepage": "https://github.com/OYForever",
   "license": "MIT",
   "authors": "MIT",
   "source": {
     "git": "https://github.com/OYForever/TrackReport.git",
-    "tag": "1.1.5"
+    "tag": "2.0.0"
   },
   "platforms": {
     "ios": "13.0"
@@ -28,10 +28,18 @@
     "OTHER_LDFLAGS": "-ObjC"
   },
   "dependencies": {
-    "FirebaseAnalytics": [],
-    "FirebaseRemoteConfig": [],
-    "FirebaseCrashlytics": []
+    "FirebaseAnalytics": [
+      "11.15.0"
+    ],
+    "FirebaseRemoteConfig": [
+      "11.15.0"
+    ],
+    "FirebaseCrashlytics": [
+      "11.15.0"
+    ],
+    "Adjust": [
+      "5.5.0"
+    ]
   },
-  "frameworks": "AdSupport",
   "swift_version": "5.0"
 }

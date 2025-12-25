@@ -7,6 +7,7 @@
 
 import Foundation
 import StoreKit
+import AdjustSdk
 
 /// 订阅所在页面
 @objc
@@ -33,10 +34,17 @@ public class TrackReportKit: NSObject {
     /// - Parameters:
     ///   - host: 上报域名
     ///   - appId: 上报平台的appid
-    @objc(tr_configWithHost:appId:)
-    public class func config(host: String = "https://mac.bsfss.com", appId: String) {
+    ///   - adjustAppToken: adjust平台AppToken
+    @objc(tr_configWithHost:appId:adjustAppToken:)
+    public class func config(host: String = "https://mac.bsfss.com", appId: String, adjustAppToken: String) {
         ReportManager.shared.config(host: host, appId: appId)
+        
         FirebaseManager.shared.configure()
+        
+        let adjustConfig = ADJConfig(
+            appToken: adjustAppToken,
+            environment: ADJEnvironmentProduction)
+        Adjust.initSdk(adjustConfig)
     }
     
     /// 获取APP配置
@@ -51,7 +59,9 @@ public class TrackReportKit: NSObject {
     /// 新增用户，只需调用一次
     @objc
     public class func registerUser() {
-        ReportManager.shared.registerUser()
+        Task {
+            await ReportManager.shared.registerUser()
+        }
     }
     
     /// 用户订阅成功（Storekit 1）

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [TrackReportKit tr_configWithHost:@"https://mac.bsfss.com" appId:@"50"];
+    [TrackReportKit tr_configWithHost:@"https://mac.bsfss.com" appId:@"67" adjustAppToken:@"ubolbmrjlhc0"];
     
 //    [TrackReportKit registerUser];
     

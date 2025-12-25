@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "TrackReport"
-  s.version          = "1.1.5"
+  s.version          = "2.0.0"
   s.summary          = "TrackReport components"
   
   
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.resources = [
     "TrackReport/src/Resource/TrackReport.bundle"
   ]
-  s.resource_bundle = { 'TrackReport_Privacy' => ["TrackReport/src/Resource/PrivacyInfo.xcprivacy"] }
+  s.resource_bundle = { "TrackReport_Privacy" => ["TrackReport/src/Resource/PrivacyInfo.xcprivacy"] }
   
   s.static_framework = true
   s.pod_target_xcconfig = {
@@ -23,10 +23,10 @@ Pod::Spec.new do |s|
     "OTHER_LDFLAGS" => "-ObjC"
   }
   
-  s.dependency "FirebaseAnalytics"
-  s.dependency "FirebaseRemoteConfig"
-  s.dependency "FirebaseCrashlytics"
+  s.dependency "FirebaseAnalytics", "11.15.0"
+  s.dependency "FirebaseRemoteConfig", "11.15.0"
+  s.dependency "FirebaseCrashlytics", "11.15.0"
   
-  s.frameworks = "AdSupport"
+  s.dependency "Adjust", "5.5.0"
   
 end

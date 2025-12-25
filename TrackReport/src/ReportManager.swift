@@ -7,6 +7,7 @@
 
 import AdServices
 import Foundation
+import AdjustSdk
 
 class ReportManager {
     static let shared = ReportManager()
@@ -62,7 +63,7 @@ extension ReportManager {
         case token = "ReportManagerUserDefaultsKeys_token"
     }
     
-    func registerUser() {
+    func registerUser() async {
         // 1. 拼接完整的 URL
         let urlString = baseUrl + RequestPath.addUser
         guard let url = URL(string: urlString) else {
@@ -85,36 +86,32 @@ extension ReportManager {
         if let token = token {
             requestBody["token"] = token
         }
-        // 4. 将字典转换为 JSON Data
+        if let idfa = await Adjust.idfa() {
+            requestBody["idfa"] = idfa
+        }
+        if let idfv = await Adjust.idfv() {
+            requestBody["idfv"] = idfv
+        }
+        // 5. 发送网络请求
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: requestBody, options: [])
             request.httpBody = jsonData
             kLog("发送注册请求: \(urlString), 数据: \(requestBody)")
-        } catch {
-            kLog("JSON 序列化失败: \(error)")
-            return
-        }
-        // 5. 发送网络请求
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            // 6. 处理响应
-            if let error = error {
-                kLog("注册请求失败: \(error)")
-                return
-            }
+            let (data, response) = try await URLSession.shared.data(for: request)
             guard let httpResponse = response as? HTTPURLResponse else {
                 kLog("无效的响应")
                 return
             }
             kLog("注册请求响应状态码: \(httpResponse.statusCode)")
-            if let data = data, let responseString = String(data: data, encoding: .utf8) {
+            if let responseString = String(data: data, encoding: .utf8) {
                 kLog("注册请求响应内容: \(responseString)")
                 if self.token == nil {
                     self.updateToken()
                 }
             }
+        } catch {
+            kLog("注册请求失败: \(error)")
         }
-        // 启动任务
-        task.resume()
     }
     
     func subscription(with transactionId: String, page: TrackReportSubscriptionPage) {
